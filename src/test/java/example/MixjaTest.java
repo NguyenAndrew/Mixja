@@ -4,8 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static com.andyln.Mixja.mix;
+import static com.andyln.Mixja.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class MixjaTest {
 
@@ -29,12 +32,19 @@ class MixjaTest {
 
     // Should be static final in regular code, making non-static for testing purposes.
     private Set<String> set = mix(() -> {
-       Set<String> set = new HashSet<>();
-       set.add("My");
-       set.add("Oh");
-       // Duplicate set element added for testing purposes.
-       set.add("My");
-       return set;
+        Set<String> set = new HashSet<>();
+        set.add("My");
+        set.add("Oh");
+        // Duplicate set element added for testing purposes.
+        set.add("My");
+        return set;
+    });
+
+    private static final Set<String> brokenMockSet = eix(() -> {
+        // Note: Warning cannot be avoided for mocks with generic parameters
+        Set<String> brokenMockSet = mock(Set.class);
+        when(brokenMockSet.add(anyString())).thenThrow(new UnsupportedOperationException());
+        return brokenMockSet;
     });
 
     @Test
@@ -60,5 +70,12 @@ class MixjaTest {
         assertEquals(2, set.size());
         assertTrue(set.contains("My"));
         assertTrue(set.contains("Oh"));
+    }
+
+    @Test
+    void test_Broken_Set() {
+        assertThrows(UnsupportedOperationException.class, () -> {
+            brokenMockSet.add("Any string will thrown exception here");
+        });
     }
 }
