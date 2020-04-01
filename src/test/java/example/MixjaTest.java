@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static com.andyln.Mixja.*;
+import static com.andyln.Mixja.eix;
+import static com.andyln.Mixja.mix;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
@@ -40,7 +42,7 @@ class MixjaTest {
         return set;
     });
 
-    private static final Set<String> brokenMockSet = eix(() -> {
+    private static final Set<String> BROKEN_MOCK_SET = eix(() -> {
         // Note: Warning cannot be avoided for mocks with generic parameters
         Set<String> brokenMockSet = mock(Set.class);
         when(brokenMockSet.add(anyString())).thenThrow(new UnsupportedOperationException());
@@ -73,9 +75,7 @@ class MixjaTest {
     }
 
     @Test
-    void test_Broken_Set() {
-        assertThrows(UnsupportedOperationException.class, () -> {
-            brokenMockSet.add("Any string will thrown exception here");
-        });
+    void test_Broken_Mock_Set() {
+        assertThrows(UnsupportedOperationException.class, () -> BROKEN_MOCK_SET.add("Any string will thrown exception here"));
     }
 }
