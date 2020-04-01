@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/NguyenAndrew/Mixja)
 [![Maven metadata URL](TODO)
-[![javadoc](TODO)](TODO)
+[![javadoc](https://javadoc.io/badge2/com.andyln/mixja/javadoc.svg)](https://javadoc.io/doc/com.andyln/mixja)
 
 Java library implementing Mixtures - Setup objects without needing private methods or using [double brace initialization anti-pattern](https://www.baeldung.com/java-double-brace-initialization#disadvantages-of-using-double-braces). Readable, efficient and safe way to construct ArrayLists, HashMaps, your own Objects, and more!
 
