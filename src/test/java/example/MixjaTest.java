@@ -30,7 +30,7 @@ class MixjaTest {
         return map;
     });
 
-    // Should be static final in regular code, making non-static for testing purposes.
+    // Should be static final in regular code, making non-static non-final for testing purposes.
     private Set<String> set = mix(() -> {
         Set<String> set = new HashSet<>();
         set.add("My");
