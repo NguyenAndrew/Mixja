@@ -20,7 +20,7 @@ Add the following line to your pom.xml
 
 ## Examples
 
-### mix - Creates an object that may require additional put/add/set/etc. Java Lambda used to setup and return this object.
+### mix - Creates an object that may require additional put/add/setters/etc. Java Lambda used to setup and return this object.
 
 ```
 import static com.andyln.Mixja.mix;
