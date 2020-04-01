@@ -18,7 +18,7 @@ Add the following line to your pom.xml
 </dependency>
 ```
 
-## Example Usages
+## Examples
 
 ### mix - Creates an object that may require additional put/add/set/etc. Java Lambda used to setup and return this object.
 
