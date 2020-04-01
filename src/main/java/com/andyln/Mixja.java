@@ -5,13 +5,14 @@ import java.util.function.Supplier;
 
 public class Mixja {
 
-    private Mixja() {}
+    private Mixja() {
+    }
 
     /**
-     * Creates an object that requires additional put/add/set/etc. Use a Java Lambda to setup and return this object.
+     * Creates an object that may require additional put/add/set/etc. Java Lambda used to setup and return this object.
      *
      * @param supplier Any Supplier
-     * @param <E> - Element returned by Supplier
+     * @param <E>      - Element returned by Supplier
      * @return Return value of Supplier
      */
     public static <E> E mix(Supplier<E> supplier) {
@@ -22,7 +23,7 @@ public class Mixja {
      * eix = checked (e)xception may be thrown m(ix). The performance of try-catch is why this method is standalone.
      *
      * @param callable Any Callable
-     * @param <E> - Element returned by Callable
+     * @param <E>      - Element returned by Callable
      * @return Return value of Callable
      */
     public static <E> E eix(Callable<E> callable) {
