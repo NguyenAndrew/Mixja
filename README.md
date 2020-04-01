@@ -30,7 +30,7 @@ private Map<String, String> map = mix(() -> {
 ```
 import static com.andyln.Mixja.eix;
 ...
-private static final Set<String> broken_set = eix(() -> {
+private Set<String> brokenSet = eix(() -> {
     Set<String> set = mock(Set.class);
     when(set.add(anyString())).thenThrow(new UnsupportedOperationException());
     return set;
