@@ -8,7 +8,15 @@ Java library implementing Mixtures - Setup objects without needing private metho
 
 ## How to Install
 
-Maven Central Dependency Coming Soon!
+Add the following line to your pom.xml
+
+```
+<dependency>
+  <groupId>com.andyln</groupId>
+  <artifactId>mixja</artifactId>
+  <version>1.0</version>
+</dependency>
+```
 
 ## Example Usages
 
