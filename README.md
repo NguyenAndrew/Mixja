@@ -44,3 +44,21 @@ private Set<String> brokenSet = eix(() -> {
     return set;
 });
 ```
+
+## FAQ
+
+Q: Why use this library instead of just using `Map.of(...)`?
+
+A: You should use Map.of(...) when possible! This library helps solves several problems not covered by that syntax.
+1. Setup objects that are not part of Collections
+```
+CustomObject customObject = mix(() -> {
+    CustomObject customObject = new CustomObject();
+    customObject.setName("Awesome");
+    customObject.setFeature(new Feature());
+    customObject.setDate("March 31, 2020");
+    return customObject;
+});
+```
+2. `Of(...)` syntax is only available on Java 9+. Can use this library on Java 8.
+3. Setup either your own objects or objects provided by dependencies without needing to maintain Builder classes or annotation code.
