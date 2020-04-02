@@ -49,8 +49,9 @@ private Set<String> brokenSet = eix(() -> {
 
 Q: Why use this library instead of just using `Map.of(...)`?
 
-A: You should use Map.of(...) when possible! This library helps solves several problems not covered by that syntax.
-1. Setup objects that are not part of Collections
+A: You should use `Of(...)` when possible! This library helps solves several problems not covered by that syntax.
+
+1. Can setup objects that are not part of Collections. Usable with your own classes or classes from your dependencies.
 ```
 CustomObject customObject = mix(() -> {
     CustomObject customObject = new CustomObject();
