@@ -62,4 +62,20 @@ CustomObject customObject = mix(() -> {
 });
 ```
 2. `Of(...)` syntax is only available on Java 9+. Can use this library on Java 8.
-3. Setup either your own objects or objects provided by dependencies without needing to maintain Builder classes or annotation code.
+
+Q: Can't I just use a [Builder](https://www.baeldung.com/java-builder-pattern-freebuilder)?
+
+A: This library can deliver similar results to a Builder, but will also provide the following additional benefits:
+
+1. API delivers on use cases that a Builder may not inherently provide.
+```
+Toaster usedToaster = mix(() -> {
+  Toaster toaster = new Toaster();
+  toaster.add(new Bread());
+  toaster.add(new Bagel());
+  toaster.toast();
+  toaster.removeAll();
+  return toaster;
+});
+```
+2. Allows you to maintain fewer Builder classes and annotations
