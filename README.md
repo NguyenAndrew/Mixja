@@ -4,7 +4,7 @@
 ![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fandyln%2Fmixja%2Fmaven-metadata.xml)  
 [![javadoc](https://javadoc.io/badge2/com.andyln/mixja/javadoc.svg)](https://javadoc.io/doc/com.andyln/mixja)
 
-Java library implementing Mixtures - Setup objects without needing private methods or using [double brace initialization anti-pattern](https://www.baeldung.com/java-double-brace-initialization#disadvantages-of-using-double-braces). Readable, efficient and safe way to construct ArrayLists, HashMaps, your own Objects, and more!
+Java library implementing Mixtures (also known as Immediate-Invoked Function Expressions) - Setup objects without needing private methods or using [double brace initialization anti-pattern](https://www.baeldung.com/java-double-brace-initialization#disadvantages-of-using-double-braces). Readable, efficient and safe way to construct ArrayLists, HashMaps, your own Objects, and more!
 
 ## How to Install
 
@@ -45,7 +45,25 @@ private Set<String> brokenSet = eix(() -> {
 });
 ```
 
-## FAQ
+## FAQ - Readings
+
+Q: When should I use a Mixture or Immediate-Invoked Function Expression (IIFE)?
+
+A: Avoids needing to create named functions. Cleaner code by encapsulating variables. IIFE are
+
+* Anonymous - You don't have to make a name for your function.
+* Brief - Code is easy to read due to its "one-time-use" nature.
+* Inline - Code is viewed exactly where it is used. No need to jump around code base to see functionalty.
+
+Q: Are there any more resources where I can learn about IIFE?
+
+A: Here are some of my recommended reading links (Note: These reading links are JavaScript specific, Java examples are in FAQ - Usages below):
+
+* https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+* https://www.youtube.com/watch?v=3cbiZV4H22c (Video)
+* http://adripofjavascript.com/blog/drips/an-introduction-to-iffes-immediately-invoked-function-expressions.html
+
+## FAQ - Usages
 
 Q: Why use this library instead of just using `Map.of(...)`?
 
