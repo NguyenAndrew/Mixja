@@ -4,7 +4,7 @@
 ![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fandyln%2Fmixja%2Fmaven-metadata.xml)  
 [![javadoc](https://javadoc.io/badge2/com.andyln/mixja/javadoc.svg)](https://javadoc.io/doc/com.andyln/mixja)
 
-Java library implementing Mixtures (also known as Immediate-Invoked Function Expressions) - Setup objects without needing private methods or using [double brace initialization anti-pattern](https://www.baeldung.com/java-double-brace-initialization#disadvantages-of-using-double-braces). Readable, efficient and safe way to construct ArrayLists, HashMaps, your own Objects, and more!
+Java library implementing Mixtures (also known as IIFE or Immediately-Invoked Function Expressions) - Setup objects without needing private methods or using [double brace initialization anti-pattern](https://www.baeldung.com/java-double-brace-initialization#disadvantages-of-using-double-braces). Readable, efficient and safe way to construct ArrayLists, HashMaps, your own Objects, and more!
 
 ## How to Install
 
@@ -47,7 +47,7 @@ private Set<String> brokenSet = eix(() -> {
 
 ## FAQ - Readings
 
-Q: When should I use a Mixture or Immediate-Invoked Function Expression (IIFE)?
+Q: When should I use a Mixture or Immediately-Invoked Function Expression (IIFE)?
 
 A: Avoids needing to create named functions. Cleaner code by encapsulating variables. IIFE are
 
